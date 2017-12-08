@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<title>COPS ASSIGNMENT</title>
+<style>
+	body
+	{
+		margin: 0;
+	}
+	div.c1
+	{
+		background-color: lightpink;
+		border: thin solid  black;
+		color: black;
+		height: 10%;
+	}
+	#col1
+	{
+		background-color: plum;
+		float: left;
+		width: 20%;
+		height: 100%;
+		padding: auto;
+	}
+	#col2
+	{
+		background-color: aquamarine;
+		float: right;
+		height: 100%;
+		width: 80%;
+	}
+	p
+	{
+		margin-top: 40%;
+		text-align: center;
+		font-family: "Times New Roman";
+	}
+	button.b
+	{
+		border: none;
+		background-color: lavender;
+		font-weight: bold;
+		width:  100%;
+		height: 100%;
+	}
+</style>
+<script>
+var c=0;
+function b1()
+{
+	c++;
+	document.getElementById("para").innerHTML= "Number of Clicks:" + c;
+}
+var x=false;
+function throttle(func,delay)
+{
+	return function(){
+		if(!x){
+			func.call();
+			x=true;
+			setTimeout(function(){x=false;},delay);
+		}	
+	}
+}
+</script>
+</head>
+<body>
+<div width="100%">
+<div id="col2"> 
+<p id="para"> Number  of Clicks: 0</p>
+</div>
+<div id="col1">
+<div class="c1" align="center">
+<button class="b" onclick="(throttle(b1,2000))()" id="B">Button 1</button>
+</div>
+<div class="c1" align="center">
+<button class="b">Button 2</button>
+</div>
+<div class="c1" align="center">
+<button class="b">Button 3</button>
+</div>
+<div class="c1" align="center">
+<button class="b">Button 5</button>
+</div>
+</div>
+</body>  
+	
